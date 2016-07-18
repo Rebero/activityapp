@@ -4,14 +4,6 @@ angular.module('createModule', [])
 
     $scope.onSubmit = function(newActivity) {
       console.log(newActivity);
+      $scope.user = {};
     };
-
-    // this.model = new app.Activity();
-    // console.log(this.model);
-    // onSubmit: function(newActivity) {
-    //   //add functionality to add facebook username as initiator to newAcitity.initiator
-    //   console.log(newActivity);
-    //   this.model = new app.Activity();
-    //   // we want to call the enterNewActivity here
-    // }
   });
