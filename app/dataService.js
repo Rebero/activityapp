@@ -6,12 +6,18 @@ angular.module('dataServiceModule', [])
 
     var logout;
 
-    var getGoingActivities = function(cb, activities) {
+    var getGoingActivities = function(cb) {
       firebase.database().ref('activities').once('value').then(function(snapshot) {
-        activities = snapshot.val();
-        cb.call(this, activities);
+        var activities = snapshot.val();
+        cb.call(null ,activities);
       })
     };
+
+    // var getGoingActivities = function(cb) {
+    //   firebase.database().ref('activities').once('value').then(function(snapshot) {
+    //     cb.call(this, snapshot.val());
+    //   }.bind(this));
+    // };
 
     var getUnseenActivities = firebase.database().ref().once;
 
