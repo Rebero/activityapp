@@ -55,15 +55,13 @@ angular.module("pendingModule", [])
   $scope.nextEvent = function(data) {
       console.log(data);
 
-
+  $scope.SS = [];
   $scope.activity = Database.getUnseenActivities(function(data) {
-    // $scope.activities = data;
-    return data;
+    console.log(data);
+    $scope.SS.push(data);
   });
 
-
-
-
+  console.log($scope.SS);
 
 
 

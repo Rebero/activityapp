@@ -37,5 +37,6 @@ angular.module('mainModule', ['ngRoute', 'loginModule', 'pendingModule', 'joined
       templateUrl : 'app/pages/create.html',
       controller  : 'createController'
     });
+
   })
   

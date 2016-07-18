@@ -8,13 +8,13 @@
       <h3>{{ evt.name }}</h3>
       
       <img id="activityPicture" ng-src="{{ evt.imageLink }}">
-      <div id="specifics" ng-show="dummyData.length > 0">
-        <p><b>Date:</b> {{ evt.date }}</p>
-        <p><b>Time:</b> {{ evt.time }}</p>
-        <p><b>Going:</b> {{ evt.going }}</p>
-        <p><b>Creator:</b> {{ evt.creator }}</p>
+      <div id="specifics" class="card-panel teal lighten-2" ng-show="dummyData.length > 0">
+        <p><b>Date:</b><pre> {{ evt.date }} </pre></p>
+        <p><b>Time:</b><pre> {{ evt.time }} </pre></p>
+        <p><b>Going:</b><pre> {{ evt.going }} </pre></p>
+        <p><b>Creator:</b><pre> {{ evt.creator }} </pre></p>
         <p><b>Comments:</b>
-          </br>{{ evt.comments }}
+          </br> <pre> {{ evt.comments }} </pre>
         </p>       
       </div> 
 
@@ -23,9 +23,11 @@
         <h6 >No events at the moment :(</h6>
       </div>
 
+      <div> 
+        <button type="button" class="btn btn-lg" aria-label="Left Align" ng-click="discardEvent(dummyData)">Decline</button>
+        <button type="button" class="btn btn-lg" aria-label="Right Align" ng-click="keepEvent(dummyData.shift())">Accept</button>
+      </div>
       
-      <button type="button" class="btn btn-lg" aria-label="Left Align" ng-click="discardEvent(dummyData)">Decline</button>
-      <button type="button" class="btn btn-lg" aria-label="Right Align" ng-click="keepEvent(dummyData.shift())">Accept</button>
     </div>
   </div> <!-- /container -->
 </div>
