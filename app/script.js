@@ -38,16 +38,4 @@ angular.module('mainModule', ['ngRoute', 'loginModule', 'pendingModule', 'joined
       controller  : 'createController'
     });
   })
-
-  // create the controller and inject Angular's $scope
-  // .controller('loginController', function($scope) {
-  //   $scope.message = 'Everyone come and see how good I look!';
-  // })
-
-  // .controller('pendingController', function($scope) {
-  //   $scope.message = 'Look! I am an about page.';
-  // })
-
-  // .controller('joinedController', function($scope) {
-  //   $scope.message = 'Contact us! JK. This is just a demo.';
-  // });
+  
