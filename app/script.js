@@ -2,7 +2,7 @@
 
 // create the module and name it scotchApp
 // also include ngRoute for all our routing needs
-angular.module('mainModule', ['ngRoute', 'loginModule', 'pendingModule'])
+angular.module('mainModule', ['ngRoute', 'loginModule', 'pendingModule', 'joinedModule', 'createModule'])
 
   // configure our routes
   .config(function($routeProvider) {
@@ -30,6 +30,12 @@ angular.module('mainModule', ['ngRoute', 'loginModule', 'pendingModule'])
     .when('/joined', {
       templateUrl : 'app/pages/joined.html',
       controller  : 'joinedController'
+    })
+
+    // route for the contact page
+    .when('/create', {
+      templateUrl : 'app/pages/create.html',
+      controller  : 'createController'
     });
   })
 
@@ -42,6 +48,6 @@ angular.module('mainModule', ['ngRoute', 'loginModule', 'pendingModule'])
   //   $scope.message = 'Look! I am an about page.';
   // })
 
-  .controller('joinedController', function($scope) {
-    $scope.message = 'Contact us! JK. This is just a demo.';
-  });
+  // .controller('joinedController', function($scope) {
+  //   $scope.message = 'Contact us! JK. This is just a demo.';
+  // });
