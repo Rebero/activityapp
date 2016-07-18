@@ -1,33 +1,41 @@
 <!-- login.html -->
 <link href="app/pages/create.css" rel="stylesheet">
 <div class="jumbotron text-center">
-  <form class="form-signin">
-    <h2 class="form-signin-heading">Create a new Activity </h2>
+  <form>
+    <fieldset class="form-group">
+    <h2>Create a new Activity </h2>
     <label for="name">Name</label>
-    <input type="text" ng-model="user.name" name="uName" required=""/>
-    <br>
+    <input id ="name" class="form-control" type="text" ng-model="user.name" name="uName" required=""/>
+    </fieldset>
 
-    <label for="name" lass="sr-only">Date</label>
-    <input type="text" ng-model="user.date" name="uDate" required="" />
-    <br>
+    <fieldset class="form-group">
+    <label for="name">Date</label>
+    <input type="text"  class="form-control" id ="name" ng-model="user.date" name="uDate" required="" />
+    </fieldset>
 
+    <fieldset class="form-group">
     <label for="name">Time</label>
-    <input type="text" ng-model="user.time" name="uTime" required="" />
-    <br>
+    <input type="text" class="form-control" id ="name"ng-model="user.time" name="uTime" required="" />
+    </fieldset>
 
+    <fieldset class="form-group">
     <label for="name">Going</label>
-    <input type="text" ng-model="user.going" name="uGoing" required="" />
-    <br>
+    <input type="text" class="form-control" id ="name" ng-model="user.going" name="uGoing" required="" />
+    </fieldset>
 
+    <fieldset class="form-group">
     <label for="name">Creator</label>
-    <input type="text" ng-model="user.creator" name="uCreator" required="" />
-    <br>
+    <input type="text" class="form-control" id ="name" ng-model="user.creator" name="uCreator" required="" />
+    </fieldset>
 
+    <fieldset class="form-group">
     <label for="name">Comments</label>
-    <input type="text" ng-model="user.comments" name="uComments" required="" />
-    <br>
+    <input type="text" class="form-control" id ="name" ng-model="user.comments" name="uComments" required="" />
+    </fieldset>
 
-    <input type="submit" ng-click="onSubmit(user)" value="Save" />
+    <fieldset class="form-group">
+    <input type="submit"  ng-click="onSubmit(user)" value="Save" />
+    </fieldset>
   </form>
 </div>
 
