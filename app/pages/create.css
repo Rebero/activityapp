@@ -1,7 +1,46 @@
 body {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 0 0 40px 0;
   background-color: #eee;
+}
+
+.jumbotron {
+  position: relative;
+  top: 100px;
+}
+
+@keyframes moveLabel {
+  from {
+    left: 0%;
+    top: 45px;
+  }
+  to {
+    left: -50%;
+    top: -45px;
+  }
+}
+
+fieldset {
+  position: relative;
+  width: 65%;
+  left: 17.5%;
+  border-radius: 10px;
+}
+
+fieldset label {
+  position: relative;
+  top: 45px;
+  font: small-caps 600 24px/24px "PT Sans", "Open Sans", Helvetica, sans-serif;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+fieldset:focus label {
+  animation: moveLabel 1s linear 1s infinite forwards;
+} 
+
+fieldset input.form-control {
+  text-align: center;
+  font: 26px/30px "PT Sans", "Open Sans", Helvetica, sans-serif;
+  color: #FFF;
 }
 
 .form-signin {
@@ -9,13 +48,16 @@ body {
   padding: 15px;
   margin: 0 auto;
 }
+
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
   margin-bottom: 10px;
 }
+
 .form-signin .checkbox {
   font-weight: normal;
 }
+
 .form-signin .form-control {
   position: relative;
   height: auto;
@@ -25,14 +67,17 @@ body {
   padding: 10px;
   font-size: 16px;
 }
+
 .form-signin .form-control:focus {
   z-index: 2;
 }
+
 .form-signin input[type="email"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
+
 .form-signin input[type="password"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;

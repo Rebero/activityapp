@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
 
     <!-- Materialize.css library add-in -->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen, projection"/>
 
     <!-- SPELLS -->
     <!-- load angular and angular route via CDN -->
@@ -40,7 +40,7 @@
 
     <!-- HEADER AND NAVBAR -->
     <header>
-      <nav class="navbar navbar-default">
+      <nav class="navbar navbar-default navbar-fixed">
         <div class="container">
           <div class="navbar-header">
             <a class="navbar-brand" href="#/">Activity App</a>
@@ -63,5 +63,9 @@
       <div ng-view></div>
     </div>
 
+
+    <script>
+      let formControls = document.querySelectorAll("fieldset label");
+    </script>
   </body>
 </html>

@@ -1012,7 +1012,7 @@
 }
 
 .teal.lighten-2 {
-  background-color: #4db6ac !important;
+  background-color: #4db6ac;
 }
 
 .teal-text.text-lighten-2 {
@@ -2260,6 +2260,7 @@ html {
  * Remove default margin.
  */
 body {
+  padding: 0;
   margin: 0;
 }
 
@@ -4247,9 +4248,38 @@ nav .input-field label.active {
   z-index: 998;
 }
 
-.navbar-fixed nav {
+nav.navbar.navbar-fixed.navbar-default {
   position: fixed;
+  height: 60px;
+  transition: height 0.25s ease-in-out;
 }
+  
+  ul.nav.navbar-nav.navbar-right {
+    position: relative;
+    height: 60px;
+  }
+
+  ul.nav.navbar-nav.navbar-right li {
+    position: relative;
+    height: 60px;
+  }
+
+  nav.navbar.navbar-fixed.navbar-default:hover {
+    height: 85px;
+  }
+
+  nav.navbar.navbar-fixed.navbar-default a {
+    padding-top: 0;
+    font-size: 24px;
+    line-height: 60px;
+    transition: all 0.25s ease-in-out;
+  }
+
+  nav.navbar.navbar-fixed.navbar-default:hover a {
+    font-size: 32px;
+    line-height: 85px;
+  }
+
 
 @media only screen and (min-width: 601px) {
   nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
