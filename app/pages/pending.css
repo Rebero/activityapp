@@ -1,5 +1,30 @@
+
 body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #eee;
+}
+
+body * {
+  font: 26px/30px "PT Sans", "Open Sans", Helvetica, sans-serif;
+}
+
+h2 {
+  font: 48px/50px "PT Sans", "Open Sans", Helvetica, sans-serif;
+}
+
+.jumbotron {
+  width: 50%;
+  margin-left:25%;
+  text-align: left;
+}
+
+#noEventsLeft {
+  font: 200 36px/40px "PT Sans", "Open Sans", Helvetica, sans-serif;
+  color: #696969;
+  text-align: center;
+}
+
+p {
+  text-align: left;
 }
