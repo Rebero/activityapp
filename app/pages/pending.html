@@ -2,12 +2,13 @@
 <link href="app/pages/pending.css" rel="stylesheet">
 
 <div class="jumbotron text-center">
-  <div class="container" ng-init="next(dummyData.shift())">
+  <div class="container" ng-init="nextEvent(dummyData.shift())">
     <h2>You have a new request!</h2>
     <div id="pendingActivity">
       <h3>{{ evt.name }}</h3>
+      
       <img id="activityPicture" ng-src="{{ evt.imageLink }}">
-      <div id="specifics">
+      <div id="specifics" ng-show="dummyData.length > 0">
         <p><b>Date:</b> {{ evt.date }}</p>
         <p><b>Time:</b> {{ evt.time }}</p>
         <p><b>Going:</b> {{ evt.going }}</p>
@@ -16,8 +17,15 @@
           </br>{{ evt.comments }}
         </p>       
       </div> 
+
+      
+      <div id="noEventsLeft" ng-show="dummyData.length === 0">
+        <h6 >No events at the moment :(</h6>
+      </div>
+
+      
       <button type="button" class="btn btn-lg" aria-label="Left Align" ng-click="discardEvent(dummyData)">Decline</button>
-      <button type="button" class="btn btn-lg" aria-label="Right Align" ng-click="keepEvent(dummyData[0])">Accept</button>
+      <button type="button" class="btn btn-lg" aria-label="Right Align" ng-click="keepEvent(dummyData.shift())">Accept</button>
     </div>
   </div> <!-- /container -->
 </div>
