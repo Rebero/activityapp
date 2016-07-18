@@ -1,5 +1,5 @@
 angular.module('dataServiceModule', [])
-  .factory('Activities', function() {
+  .factory('Database', function() {
     var login = function() {
       return true
     };
