@@ -1,9 +1,9 @@
 <!-- joined.html -->
-<link href="pages/joined.css" rel="stylesheet">
+<link href="app/pages/joined.css" rel="stylesheet">
 <div class="jumbotron text-center">
   <div class="container">
     <h2>Joined Activities</h2>
-    <div ng-repeat="activity in activities track by $index">
+    <div ng-repeat="activity in joinedActivities track by $index">
       <h3>{{ activity.name }}</h3>
       <img id="activityPicture" ng-src="{{ activity.imageLink}}">
       <p>Date: {{ activity.date }}</p>
