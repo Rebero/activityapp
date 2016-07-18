@@ -1,16 +1,24 @@
 angular.module('dataServiceModule', [])
   .factory('Database', function() {
     var login = function() {
-      return true
+      return true;
     };
 
     var logout;
 
+    // New way ???
+    // var getGoingActivities = function(cb) {
+    //   firebase.database().ref('activities').once('value').then(function(snapshot) {
+    //     activities = snapshot.val();
+    //     cb(activities);
+    //   })
+    // };
+    
+    // Old Way
     var getGoingActivities = function(cb) {
       firebase.database().ref('activities').once('value').then(function(snapshot) {
-        activities = snapshot.val();
-        cb.call(this, activities);
-      })
+        cb.call(this, snapshot.val());
+      }.bind(this));
     };
 
     var getUnseenActivities = function(cb) {
