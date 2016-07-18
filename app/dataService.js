@@ -1,11 +1,6 @@
 angular.module('dataServiceModule', [])
-  .factory('Database', function() {
-    var login = function() {
-      return true
-    };
-
-    var logout;
-
+  .factory('Database', function(Storage) {
+    
     var getGoingActivities = function(cb) {
       firebase.database().ref('activities').once('value').then(function(snapshot) {
         activities = snapshot.val();
@@ -28,14 +23,17 @@ angular.module('dataServiceModule', [])
         });
     };
 
-    var joinActivity = function(cb, currentUser) {
-      firebase.database().ref('activities/' + current).once;
+    var joinActivity = function(currentActivity) {
+      firebase.database().ref('activities/' + currentActivity).push(Storage.currentUser).then(function(snapshot){
+        return true;
+      });
     }
-    var declineActivity = firebase.database().ref().once;
+    var declineActivity = function() {
+      console.log("you're no fun");
+    }
 
     return {
-      login: login,
-      logout: logout,
+      
       getGoingActivities: getGoingActivities,
       getUnseenActivities: getUnseenActivities,
       createActivity: createActivity,
@@ -45,8 +43,20 @@ angular.module('dataServiceModule', [])
 
   })
   .factory('Storage', function() {
+    var currentUser = null;
     var login = function(username) {
+      currentUser = username;
+    };
+    var logout = function() {
+      currentUser = null;
+    };
+    var currentUserActivities = [];
 
+    return {
+      login : login,
+      logout : logout,
+      currentUser : currentUser,
+      currentUserActivities : currentUserActivities
     }
 
   });
