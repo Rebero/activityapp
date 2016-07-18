@@ -8,18 +8,17 @@ angular.module('dataServiceModule', [])
 
     var getGoingActivities = function(cb) {
       firebase.database().ref('activities').once('value').then(function(snapshot) {
+        activities = snapshot.val();
+        cb.call(this, activities);
+      })
+    };
+
+    var getUnseenActivities = function(cb) {
+      firebase.database().ref('activities').once('value').then(function(snapshot) {
         var activities = snapshot.val();
         cb.call(null ,activities);
       })
     };
-
-    // var getGoingActivities = function(cb) {
-    //   firebase.database().ref('activities').once('value').then(function(snapshot) {
-    //     cb.call(this, snapshot.val());
-    //   }.bind(this));
-    // };
-
-    var getUnseenActivities = firebase.database().ref().once;
 
     var createActivity = function(activity, cb) {
       firebase.database().ref('activities')
@@ -29,8 +28,9 @@ angular.module('dataServiceModule', [])
         });
     };
 
-    var joinActivity = firebase.database().ref().once;
-
+    var joinActivity = function(cb, currentUser) {
+      firebase.database().ref('activities/' + current).once;
+    }
     var declineActivity = firebase.database().ref().once;
 
     return {
@@ -41,6 +41,12 @@ angular.module('dataServiceModule', [])
       createActivity: createActivity,
       joinActivity: joinActivity,
       declineActivity: declineActivity
+    }
+
+  })
+  .factory('Storage', function() {
+    var login = function(username) {
+
     }
 
   });
