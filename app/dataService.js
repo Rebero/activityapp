@@ -1,18 +1,28 @@
 angular.module('dataServiceModule', [])
 .factory('Activities', function() {
-  var login = return true;
-  var logout;
-  var getGoingActivities = firebase.database().ref('activities').once.('value')then(function(snapshot) {
+  var login = function(){
+    return true
+  };
 
-  });
+  var logout;
+
+  var getGoingActivities = function(cb, activities) {
+    firebase.database().ref('activities').once('value').then(function(snapshot) {
+      activities = snapshot.val();
+      cb.call(this, activities);
+    })
+  };
+
   var getUnseenActivities = firebase.database().ref().once;
+
   var createActivity = firebase.database().ref('activities')
     .push(activity)
-    .then(function(snapshot) { // commented out so we dont actually always create new activity
-          console.log('inside creation');
-          console.log(activity, snapshot);
+    .then(function(snapshot) {
+          return snapshot.val();
     });
+
   var joinActivity = firebase.database().ref().once;
+
   var declineActivity = firebase.database().ref().once;
 
 
