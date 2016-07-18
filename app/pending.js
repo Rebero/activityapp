@@ -45,8 +45,6 @@ angular.module("pendingModule", [])
 
 
   $scope.nextEvent = function(data) {
-      console.log(data);
-
     return $scope.evt = {
       date: data.date,
       time: data.time,
