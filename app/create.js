@@ -3,7 +3,6 @@ angular.module('createModule', [])
   .controller('createController', function($scope) {
 
     $scope.onSubmit = function(newActivity) {
-      console.log(newActivity);
       $scope.user = {};
     };
   });
