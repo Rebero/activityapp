@@ -35,6 +35,6 @@ angular.module('dataServiceModule', [])
       createActivity: createActivity,
       joinActivity: joinActivity,
       declineActivity: declineActivity
-    }
+    };
 
   });
