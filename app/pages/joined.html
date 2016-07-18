@@ -5,12 +5,12 @@
     <h2>Joined Activities</h2>
     <div ng-repeat="activity in joinedActivities track by $index">
       <h3>{{ activity.name }}</h3>
-      <img id="activityPicture" ng-src="{{ activity.imageLink}}">
+      <img id="activityPicture" ng-src="{{ activity.imageLink}}" style="width:304px">
       <p>Date: {{ activity.date }}</p>
       <p>Time: {{ activity.time }}</p>
       <p>Going: {{ activity.going }}</p>
       <p>Creator: {{ activity.creator }}</p>
-      <p>Comments:</br>{{ activity.Comments }}</p>   
+      <p>Comments:</br>{{ activity.comments }}</p>   
     </div>
   </div> <!-- /container -->
 </div>
