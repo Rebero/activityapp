@@ -15,12 +15,15 @@ angular.module('dataServiceModule', [])
 
   var getUnseenActivities = firebase.database().ref().once;
 
-  var createActivity = firebase.database().ref('activities')
+  var createActivity = function(cb) {
+    firebase.database().ref('activities')
     .push(activity)
     .then(function(snapshot) {
           return snapshot.val();
     });
+  };
 
+  
   var joinActivity = firebase.database().ref().once;
 
   var declineActivity = firebase.database().ref().once;
