@@ -54,9 +54,6 @@ angular.module("pendingModule", [])
   console.log($scope.SS);
 
 
-
-
-
   $scope.nextEvent = function(data) {
       console.log(data);
 
