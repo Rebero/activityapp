@@ -3,7 +3,7 @@ let joined = [];
 
 angular.module("pendingModule", [])
 // Create the controller and inject Angular's $scope:
-.controller("pendingController", function($scope, Database) {
+.controller("pendingController", function($scope) {
 
   $scope.dummyData = [
       // time: new Date.getTime(),
@@ -44,28 +44,9 @@ angular.module("pendingModule", [])
   ];
 
 
-  $scope.activity = Database.getUnseenActivities(function(data) {
-    // $scope.activities = data;
-    return data;
-  });
-
-
   $scope.nextEvent = function(data) {
       console.log(data);
 
-  $scope.SS = [];
-  $scope.activity = Database.getUnseenActivities(function(data) {
-    console.log(data);
-    $scope.SS.push(data);
-  });
-
-  console.log($scope.SS);
-
-
-
-
-
-  $scope.nextEvent = function(data) {
     return $scope.evt = {
       date: data.date,
       time: data.time,
